@@ -13,22 +13,22 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body className={inter.className}>
-        <header className="bg-slate-100 dark:bg-slate-900">
-          <ToggleTheme />
-          <ul>
-            <li>
+        <header className="flex items-center gap-8 bg-slate-100 px-20 py-10 dark:bg-slate-900">
+          <ul className="flex gap-4">
+            <li className="text-zinc-900 dark:text-zinc-100">
               <Link href="/">Home</Link>
             </li>
-            <li>
+            <li className="text-zinc-900 dark:text-zinc-100">
               <Link href="/champions">Campeões</Link>
             </li>
           </ul>
+          <ToggleTheme />
         </header>
-        <body className="h-full min-h-screen bg-slate-100 dark:bg-slate-900">
+        <div className="h-full min-h-screen bg-slate-100 dark:bg-slate-900">
           {children}
-        </body>
+        </div>
       </body>
     </html>
   )

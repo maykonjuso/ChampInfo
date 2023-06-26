@@ -52,21 +52,35 @@ export default function List() {
   }
 
   return (
-    <div className="h-full min-h-screen bg-slate-100 dark:bg-slate-900">
-      <ModalInfo
-        name={name}
-        visible={modalVisible}
-        setVisible={setModalVisible}
-      />
-      <div className="h-sreen">
-        <form className="">
-          <label className="relative block">
+    <motion.div
+      className="h-full min-h-screen bg-slate-100 dark:bg-slate-900"
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 300, opacity: 0 }}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
+      {name !== '' && (
+        <ModalInfo
+          name={name}
+          visible={modalVisible}
+          setVisible={setModalVisible}
+        />
+      )}
+      <div className="h-sreen flex w-full flex-col items-center justify-center">
+        <form className="flex w-full items-center justify-center">
+          <label className="relative flex w-full items-center justify-center">
             <span className="sr-only">Search</span>
+
             <input
-              className="block w-full rounded-md border border-slate-300 bg-slate-300 py-2 pl-9 pr-3 text-black shadow-sm placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:bg-slate-700 sm:text-sm"
-              placeholder="Search for anything..."
+              className="flex items-center rounded-md border border-slate-300 bg-slate-300 py-2 pl-5 pr-3 text-zinc-900 shadow-sm placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-700 dark:text-zinc-100 sm:text-sm"
+              placeholder="Procure por um campeão..."
               name="inputSearch"
               id="inputSearch"
+              required
               onChange={(e) => {
                 setSearch(e.target.value)
               }}
@@ -82,22 +96,23 @@ export default function List() {
               whileTap={{ scale: 0.9 }}
               onClick={() => handler(champion.id)}
             >
-              <div className="m-2 flex h-28 w-24 flex-col items-center justify-center overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800">
+              <div className="m-2 flex h-20 w-20 flex-col items-center justify-center overflow-hidden rounded-md bg-slate-200 drop-shadow-sm dark:bg-slate-800">
                 <Image
                   loader={imageLoader}
                   src={champion.image.full}
-                  width={60}
-                  height={60}
+                  width={150}
+                  height={150}
                   alt={champion.name}
+                  className="scale-125"
                 />
-                <p className="mt-1 text-center text-zinc-900 dark:text-zinc-100">
+                {/* <p className="mt-1 text-center text-zinc-900 dark:text-zinc-100">
                   {champion.name}
-                </p>
+                </p> */}
               </div>
             </motion.li>
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }

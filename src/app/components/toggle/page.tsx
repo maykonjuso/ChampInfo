@@ -1,8 +1,6 @@
 'use client'
-
 import { useEffect, useState } from 'react'
 import { Grid, Switch } from '@nextui-org/react'
-import { Moon, SunDim } from 'lucide-react'
 
 export default function ToggleTheme() {
   const [theme, setTheme] = useState('dark')
@@ -21,11 +19,10 @@ export default function ToggleTheme() {
   return (
     <Grid>
       <Switch
+        className="drop-shadow-lg"
         checked={true}
         onChange={handler}
         size="lg"
-        iconOn={<Moon />}
-        iconOff={<SunDim />}
       />
     </Grid>
   )

@@ -1,7 +1,6 @@
-'use client'
-
 import React, { useEffect, useState } from 'react'
 import { Modal, Text } from '@nextui-org/react'
+import Image from 'next/image'
 
 interface ModalInfoProps {
   visible: boolean
@@ -9,9 +8,13 @@ interface ModalInfoProps {
   name: string
 }
 
+const imageLoader = ({ src }: any) => {
+  return `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${src}_0.jpg`
+}
+
 export default function ModalInfo({
-  visible,
   name,
+  visible,
   setVisible,
 }: ModalInfoProps) {
   const closeHandler = () => {
@@ -37,10 +40,11 @@ export default function ModalInfo({
           closeButton
           blur
           aria-labelledby="modal-title"
+          width="600px"
           open={visible}
           onClose={closeHandler}
           key={champ.name}
-          className="bg-slate-200 dark:bg-slate-800"
+          className="border-zinc-200 dark:bg-slate-900"
         >
           <Modal.Header>
             <Text
@@ -59,8 +63,18 @@ export default function ModalInfo({
             >
               {champ.lore}
             </Text>
+            <div className="">
+              <Image
+                loader={imageLoader}
+                loading="eager"
+                src={champ.id}
+                width={600}
+                height={300}
+                alt={champ.name}
+                className="mb-3 "
+              />
+            </div>
           </Modal.Body>
-          <Modal.Footer></Modal.Footer>
         </Modal>
       ))}
     </>
