@@ -8,10 +8,6 @@ interface ModalInfoProps {
   name: string
 }
 
-const imageLoader = ({ src }: any) => {
-  return `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${src}_0.jpg`
-}
-
 export default function ModalInfo({
   name,
   visible,
@@ -50,29 +46,30 @@ export default function ModalInfo({
             <Text
               id="modal-title"
               size={18}
-              b
               className="text-zinc-900 dark:text-zinc-100"
+              b
             >
               {champ.name}
             </Text>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="mb-3">
             <Text
               size={14}
               className="text-justify text-zinc-900 dark:text-zinc-100"
             >
               {champ.lore}
             </Text>
-            <div className="">
-              <Image
-                loader={imageLoader}
-                loading="eager"
-                src={champ.id}
-                width={600}
-                height={300}
-                alt={champ.name}
-                className="mb-3 "
-              />
+            <div className="flex h-max flex-row items-center justify-center overflow-auto rounded-md bg-slate-200 drop-shadow-sm dark:bg-slate-800">
+              {champ.skins.map((id: any) => (
+                <Image
+                  src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_${id.num}.jpg`}
+                  width={552}
+                  height={326}
+                  alt={champ.name}
+                  key={id}
+                  className=""
+                />
+              ))}
             </div>
           </Modal.Body>
         </Modal>

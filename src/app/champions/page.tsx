@@ -6,10 +6,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import 'src/app/globals.css'
 
-const imageLoader = ({ src }: any) => {
-  return `http://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/${src}`
-}
-
 type Champion = {
   name: string
   image: {
@@ -53,7 +49,7 @@ export default function List() {
 
   return (
     <motion.div
-      className="h-full min-h-screen bg-slate-100 dark:bg-slate-900"
+      className="h-full min-h-screen bg-slate-100 pt-5 dark:bg-slate-900"
       initial={{ x: 300, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 300, opacity: 0 }}
@@ -76,7 +72,7 @@ export default function List() {
             <span className="sr-only">Search</span>
 
             <input
-              className="flex items-center rounded-md border border-slate-300 bg-slate-300 py-2 pl-5 pr-3 text-zinc-900 shadow-sm placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-700 dark:text-zinc-100 sm:text-sm"
+              className="flex w-96 items-center rounded-md border border-slate-300 bg-slate-300 py-2 pl-5 pr-3 text-zinc-900 shadow-sm duration-300 placeholder:text-slate-400 hover:-translate-y-1 hover:scale-110 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:border-slate-700 dark:bg-slate-700 dark:text-zinc-100 sm:text-sm"
               placeholder="Procure por um campeão..."
               name="inputSearch"
               id="inputSearch"
@@ -98,16 +94,12 @@ export default function List() {
             >
               <div className="m-2 flex h-20 w-20 flex-col items-center justify-center overflow-hidden rounded-md bg-slate-200 drop-shadow-sm dark:bg-slate-800">
                 <Image
-                  loader={imageLoader}
-                  src={champion.image.full}
+                  src={`http://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/${champion.id}.png`}
                   width={150}
                   height={150}
                   alt={champion.name}
                   className="scale-125"
                 />
-                {/* <p className="mt-1 text-center text-zinc-900 dark:text-zinc-100">
-                  {champion.name}
-                </p> */}
               </div>
             </motion.li>
           ))}

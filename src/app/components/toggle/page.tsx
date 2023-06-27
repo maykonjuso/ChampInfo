@@ -18,12 +18,7 @@ export default function ToggleTheme() {
   }
   return (
     <Grid>
-      <Switch
-        className="drop-shadow-lg"
-        checked={true}
-        onChange={handler}
-        size="lg"
-      />
+      <Switch className="" checked={true} onChange={handler} size="lg" />
     </Grid>
   )
 }
