@@ -59,17 +59,14 @@ export default function ModalInfo({
             >
               {champ.lore}
             </Text>
-            <div className="flex h-max flex-row items-center justify-center overflow-auto rounded-md bg-slate-200 drop-shadow-sm dark:bg-slate-800">
-              {champ.skins.map((id: any) => (
-                <Image
-                  src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_${id.num}.jpg`}
-                  width={552}
-                  height={326}
-                  alt={champ.name}
-                  key={id}
-                  className=""
-                />
-              ))}
+            <div className="flex h-max flex-row items-center justify-center overflow-hidden rounded-md bg-slate-200 drop-shadow-sm dark:bg-slate-800">
+              <Image
+                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg`}
+                width={552}
+                height={326}
+                alt={champ.name}
+                className=""
+              />
             </div>
           </Modal.Body>
         </Modal>

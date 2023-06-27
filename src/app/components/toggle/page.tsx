@@ -1,6 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { Grid, Switch } from '@nextui-org/react'
+import React, { useEffect, useState } from 'react'
+import Switch from '@mui/material/Switch'
+import { Moon } from 'lucide-react'
 
 export default function ToggleTheme() {
   const [theme, setTheme] = useState('dark')
@@ -16,9 +17,11 @@ export default function ToggleTheme() {
   const handler = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
+
   return (
-    <Grid>
-      <Switch className="" checked={true} onChange={handler} size="lg" />
-    </Grid>
+    <div className="flex items-center">
+      <Switch sx={{ m: 1 }} onChange={handler} defaultChecked className="m-0" />
+      <Moon className="text-zinc-900 dark:text-zinc-100" />
+    </div>
   )
 }

@@ -49,7 +49,7 @@ export default function List() {
 
   return (
     <motion.div
-      className="h-full min-h-screen bg-slate-100 pt-5 dark:bg-slate-900"
+      className="h-full min-h-screen bg-gradient-to-r"
       initial={{ x: 300, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 300, opacity: 0 }}
