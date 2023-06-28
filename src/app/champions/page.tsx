@@ -1,10 +1,16 @@
 'use client'
 
-import ModalInfo from './components/modalInfo'
+import ModalInfo from './components/modalInfo/page'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import 'src/app/globals.css'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Campeões',
+  description: 'Página de campeões',
+}
 
 type Champion = {
   name: string
@@ -13,7 +19,7 @@ type Champion = {
   }
 }
 
-export default function List() {
+export default function Champions() {
   const [champion, setChampion] = useState<Champion[]>([])
   const [championFull, setChampionFull] = useState<Champion[]>([])
   const [search, setSearch] = useState<string>('')
@@ -49,15 +55,10 @@ export default function List() {
 
   return (
     <motion.div
-      className="h-full min-h-screen bg-gradient-to-r"
-      initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 300, opacity: 0 }}
-      transition={{
-        type: 'spring',
-        stiffness: 260,
-        damping: 20,
-      }}
+      className="h-full min-h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       {name !== '' && (
         <ModalInfo
@@ -99,6 +100,7 @@ export default function List() {
                   height={150}
                   alt={champion.name}
                   className="scale-125"
+                  priority={true}
                 />
               </div>
             </motion.li>

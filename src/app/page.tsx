@@ -1,9 +1,11 @@
 import './globals.css'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Página inicial',
+}
 
 export default function Home() {
-  return (
-    <main className="h-full min-h-screen bg-slate-100 dark:bg-slate-900">
-      Home app
-    </main>
-  )
+  return <main className="h-full">Home app</main>
 }

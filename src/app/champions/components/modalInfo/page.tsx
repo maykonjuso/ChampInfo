@@ -65,7 +65,7 @@ export default function ModalInfo({
                 width={552}
                 height={326}
                 alt={champ.name}
-                className=""
+                priority={true}
               />
             </div>
           </Modal.Body>
