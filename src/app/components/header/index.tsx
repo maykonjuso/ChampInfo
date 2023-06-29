@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import ToggleTheme from '../toggle/page'
+import ToggleTheme from '../toggle'
 
 export default function Header() {
   return (
