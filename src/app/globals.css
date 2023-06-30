@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "beaufort-bold";
+    src: url("../../public/fonts/BeaufortforLOL-Bold.otf");
+}
+
+@font-face {
+    font-family: "spiegel-bold";
+    src: url("../../public/fonts/Spiegel-Bold.otf");
+}
+
+.background {
+    background-image: url('../../public/background.webp');
+    background-size: cover;
+}
