@@ -1,10 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Switch from '@mui/material/Switch'
-import { Moon } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function ToggleTheme() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -19,9 +19,17 @@ export default function ToggleTheme() {
   }
 
   return (
-    <div className="flex items-center">
-      <Switch sx={{ m: 1 }} onChange={handler} defaultChecked className="m-0" />
-      <Moon className="text-zinc-900 dark:text-zinc-100" />
-    </div>
+    <motion.div
+      className="flex cursor-pointer items-center"
+      onClick={handler}
+      whileHover={{ scale: 1.1, rotate: [0, 180, 180, 0] }}
+      whileTap={{ scale: 0.9 }}
+    >
+      {theme === 'dark' ? (
+        <Moon className="text-black" />
+      ) : (
+        <Sun className="text-white" />
+      )}
+    </motion.div>
   )
 }

@@ -1,7 +1,7 @@
 import './globals.css'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ReactNode, Suspense } from 'react'
+import { ReactNode } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,15 +12,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.className} overflow-x-hidden`}>
+    <html lang="en" className={`${inter.className} overflow-x-hidden bg-blue1`}>
       <head>
         <head>
           <link rel="icon" sizes="128x128" href="/favicon.ico" />
         </head>
       </head>
-      <body>
-        <Suspense fallback={<p>Loading feed...</p>}>{children}</Suspense>
-      </body>
+      <body className="bg-blue1">{children}</body>
     </html>
   )
 }

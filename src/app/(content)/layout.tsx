@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.className} overflow-x-hidden `}>
-      <body className="bg-gradient-to-r from-[#F0E6D2] to-[##f7f7f7] dark:from-[#091428] dark:to-[#0A1428]">
+    <html lang="en" className={`${inter.className} overflow-x-hidden`}>
+      <body className="bg-blue1 dark:bg-white">
         <Header />
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
           >
             {children}
           </motion.div>

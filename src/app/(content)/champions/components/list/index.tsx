@@ -29,7 +29,7 @@ export default function List({ champions }: ListProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="mt-4 grid min-[350px]:grid-cols-3 sm:grid-cols-6 xl:grid-cols-12"
+          className="mt-4 grid min-[350px]:grid-cols-4 sm:grid-cols-6 xl:grid-cols-12"
         >
           {championsFilter.map((champion: any) => (
             <motion.li
