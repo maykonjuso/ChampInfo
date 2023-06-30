@@ -1,7 +1,7 @@
 import './globals.css'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +18,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <link rel="icon" sizes="128x128" href="/favicon.ico" />
         </head>
       </head>
-      <body>{children}</body>
+      <body>
+        <Suspense fallback={<p>Loading feed...</p>}>{children}</Suspense>
+      </body>
     </html>
   )
 }

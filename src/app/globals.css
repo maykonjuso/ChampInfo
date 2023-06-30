@@ -8,11 +8,66 @@
 }
 
 @font-face {
+    font-family: "beaufort-bold-italic";
+    src: url("../../public/fonts/BeaufortforLOL-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: "beaufort-medium";
+    src: url("../../public/fonts/BeaufortforLOL-Medium.otf");
+}
+
+@font-face {
     font-family: "spiegel-bold";
     src: url("../../public/fonts/Spiegel-Bold.otf");
+}
+
+@font-face {
+    font-family: "spiegel-bold-italic";
+    src: url("../../public/fonts/Spiegel-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: "spiegel-semibold";
+    src: url("../../public/fonts/Spiegel-SemiBold.otf");
 }
 
 .background {
     background-image: url('../../public/background.webp');
     background-size: cover;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #010A13 ;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #3C3C41;
+    border-radius: 14px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5B5A56;
+}
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#f7f7f7, #f7f7f7);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#C89B3C, #C89B3C)
+}
+
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
 }
