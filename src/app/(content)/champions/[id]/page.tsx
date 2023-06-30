@@ -1,7 +1,8 @@
-import { GetChampionsById } from './services/get-champion'
+import { GetChampionsById } from '../services/get-champion-by-id'
+import InfoChampion from './info/infochampion'
 
-export default async function Page({ params }: { params: { id?: string } }) {
-  const id = params.id || ''
-  const champion = await GetChampionsById(id)
-  return <h1>{champion.lore}</h1>
+export default async function Page({ params }: { params: { id: string } }) {
+  const champion = await GetChampionsById(params.id)
+
+  return <InfoChampion champion={champion} />
 }

@@ -22,7 +22,7 @@ export default function List({ champions }: ListProps) {
   }
 
   return (
-    <div className="h-full min-h-screen">
+    <div>
       <div className="h-sreen flex w-full flex-col items-center justify-center">
         <Search searchHandler={searchHandler} />
         <motion.ul

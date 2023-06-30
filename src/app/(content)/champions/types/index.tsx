@@ -6,7 +6,12 @@ export type Champion = {
 export type ChampionID = {
   id: string
   name: string
+  title: string
+  skins: {
+    num: string
+  }
   lore: string
+  tags: string[]
 }
 
 export type ListProps = {
