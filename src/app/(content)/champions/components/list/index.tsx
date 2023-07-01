@@ -2,9 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import 'src/app/globals.css'
-import Search from '../search'
-import { Champion, ListProps } from '../../types'
+import Search from '../Search'
+import { Champion, ListProps } from '../../../../../types'
 import { useState } from 'react'
 import Link from 'next/link'
 

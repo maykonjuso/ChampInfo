@@ -1,6 +1,6 @@
+import List from './components/List'
 import { Metadata } from 'next'
-import List from './champions/components/list'
-import { GetChampions } from './champions/services/get-champions'
+import { GetChampions } from '../../../services/get-champions'
 
 export const metadata: Metadata = {
   title: 'Campeões',

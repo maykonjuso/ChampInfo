@@ -33,7 +33,7 @@
 }
 
 .background {
-    background-image: url('../../public/background.webp');
+    background-image: url('../../public/images/background.webp');
     background-size: cover;
 }
 
@@ -42,7 +42,7 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: #010A13 ;
+    background: #010A13;
 }
 
 *::-webkit-scrollbar-thumb {

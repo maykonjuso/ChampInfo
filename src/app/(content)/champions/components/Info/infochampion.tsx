@@ -1,4 +1,4 @@
-import { ChampionID } from '../../types'
+import { ChampionID } from '../../../../../types'
 
 type InfoChampionProps = {
   champion: ChampionID
