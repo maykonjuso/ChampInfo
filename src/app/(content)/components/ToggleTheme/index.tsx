@@ -1,27 +1,16 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { motion } from 'framer-motion'
+import useTheme from '../../../../hooks/UseToggle'
 
 export default function ToggleTheme() {
-  const [theme, setTheme] = useState('light')
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
-
-  const handler = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <motion.div
       className="flex cursor-pointer items-center"
-      onClick={handler}
+      onClick={toggleTheme}
       whileHover={{ scale: 1.1, rotate: [0, 180, 180, 0] }}
       whileTap={{ scale: 0.9 }}
     >

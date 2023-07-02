@@ -13,17 +13,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.className} overflow-x-hidden bg-blue1`}>
+    <html
+      lang="en"
+      className={`${inter.className} h-full w-full overflow-x-hidden bg-blue1 dark:bg-white`}
+    >
       <head>
-        <head>
-          <link
-            rel="icon"
-            sizes="128x128"
-            href="../../public/assets/favicon.ico"
-          />
-        </head>
+        <link
+          rel="icon"
+          sizes="128x128"
+          href="../../public/assets/favicon.ico"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css"
+          rel="stylesheet"
+        />
       </head>
-      <body className="bg-blue1">{children}</body>
+      <body className="h-full w-full bg-blue1 dark:bg-white">{children}</body>
     </html>
   )
 }

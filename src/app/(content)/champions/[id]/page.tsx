@@ -1,8 +1,12 @@
 import { GetChampionsById } from '../../../../services/get-champion-by-id'
-import InfoChampion from '../components/Info/infochampion'
+import InfoChampion from '../components/Info'
 
 export default async function Page({ params }: { params: { id: string } }) {
   const champion = await GetChampionsById(params.id)
 
-  return <InfoChampion champion={champion} />
+  return (
+    <div className="h-full">
+      <InfoChampion champion={champion} />
+    </div>
+  )
 }

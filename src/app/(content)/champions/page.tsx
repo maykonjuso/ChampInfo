@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 
 export default async function champions() {
   const champions = await GetChampions()
-  return <List champions={champions} />
+  return (
+    <div className="bg-blue1 dark:bg-white">
+      <List champions={champions} />
+    </div>
+  )
 }
