@@ -16,10 +16,6 @@ export type ChampionComplete = {
   tags: string[]
 }
 
-export type ListChampionProps = {
-  champions: Champion[]
-}
-
 export type Theme = 'light' | 'dark'
 
 export type TagProps = {
@@ -29,4 +25,19 @@ export type TagProps = {
 
 export type InfoChampionProps = {
   champion: ChampionComplete
+}
+
+export type item = {
+  name: string
+  plaintext: string
+  image: { full: string }
+  gold: [total: string, sell: string]
+}
+
+export type ListItemsProps = {
+  items: item[]
+}
+
+export type ListChampionProps = {
+  champions: Champion[]
 }

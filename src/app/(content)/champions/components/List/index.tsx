@@ -5,10 +5,10 @@ import Image from 'next/image'
 import Search from '../Search'
 import { ListChampionProps } from '../../../../../types'
 import Link from 'next/link'
-import UseList from '../../../../../hooks/UseList'
+import UseListChampion from '../../../../../hooks/UseListChampion'
 
 export default function List({ champions }: ListChampionProps) {
-  const { championsFilter, searchHandler } = UseList(champions)
+  const { championsFilter, searchHandler } = UseListChampion(champions)
 
   return (
     <div className="bg-blue1 dark:bg-white">
@@ -21,13 +21,12 @@ export default function List({ champions }: ListChampionProps) {
           className="mt-4 grid h-full min-[350px]:grid-cols-4 sm:grid-cols-6 xl:grid-cols-12"
         >
           {championsFilter.map((champion: any) => (
-            <motion.li
-              key={champion.name}
-              className="w-max cursor-pointer list-none"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Link href={`/champions/${champion.id}`}>
+            <Link href={`/champions/${champion.id}`} key={champion.id}>
+              <motion.li
+                className="w-max cursor-pointer list-none"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <div className="m-2 flex h-20 w-20 flex-col items-center justify-center overflow-hidden rounded-md bg-slate-800 drop-shadow-sm dark:bg-slate-200">
                   <Image
                     src={`http://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/${champion.id}.png`}
@@ -38,8 +37,8 @@ export default function List({ champions }: ListChampionProps) {
                     priority={true}
                   />
                 </div>
-              </Link>
-            </motion.li>
+              </motion.li>
+            </Link>
           ))}
         </motion.ul>
       </div>

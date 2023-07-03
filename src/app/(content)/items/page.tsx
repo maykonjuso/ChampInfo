@@ -1,7 +1,13 @@
-export default function items() {
-  return (
-    <div>
-      <p className="text-white dark:text-black">itens</p>
-    </div>
-  )
+import { Metadata } from 'next'
+import GetItems from '../../../services/get-item'
+import ItemsList from './components/List'
+
+export const metadata: Metadata = {
+  title: 'Itens',
+  description: 'Página de itens',
+}
+
+export default async function items() {
+  const items = await GetItems()
+  return <ItemsList items={items} />
 }

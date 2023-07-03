@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Champion } from '../types'
 
-export default function UseList(champions: Champion[]) {
+export default function UseListChampion(champions: Champion[]) {
   const [championsFilter, setChampionsFilter] = useState<Champion[]>(champions)
 
   const searchHandler = (childdata: string) => {

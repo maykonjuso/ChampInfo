@@ -30,7 +30,7 @@ export default function Classes(tags: string[]) {
         {tagsPT.map((tag) => (
           <li key={tag.name}>
             <div
-              className={`flex w-max items-center justify-center gap-2 rounded-3xl ${tag.color} px-2 py-2 `}
+              className={`flex w-max items-center justify-center gap-2 rounded-3xl ${tag.color} px-3 py-1 `}
             >
               <Image
                 src={`../../../../../assets/${tag.name.toLocaleLowerCase()}.svg`}
